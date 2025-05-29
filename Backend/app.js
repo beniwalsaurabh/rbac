@@ -8,6 +8,7 @@ import ratingRoutes from './routes/ratingRoutes.js';
 import storeRoutes from './routes/storeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import path from 'path';
+import {fileURLToPath} from 'url';
 
 dotenv.config();
 connectDB();
