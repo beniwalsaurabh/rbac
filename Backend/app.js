@@ -28,7 +28,7 @@ app.use('/api/users', userRoutes);
 
 app.use(express.static(path.join(__dirname, './frontend/build')));
 
-app.use('/{*any}',function(req,res){
+app.use('/{*}',function(req,res){
     res.sendFile(path.join(__dirname, './frontend/build/index.html'));
 });
 
