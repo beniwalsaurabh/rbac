@@ -23,9 +23,7 @@ app.use(express.static(path.join(__dirname, './frontend/build')));
 
 //app.get('/', (req, res) => res.send('Store Rating API'));
 
-app.use('*',function(req,res){
-    res.sendFile(path.join(__dirname, './frontend/build/index.html'));
-});
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
@@ -33,6 +31,9 @@ app.use('/api/ratings', ratingRoutes);
 app.use('/api/stores', storeRoutes);
 app.use('/api/users', userRoutes);
 
+app.use('*',function(req,res){
+    res.sendFile(path.join(__dirname, './frontend/build/index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
