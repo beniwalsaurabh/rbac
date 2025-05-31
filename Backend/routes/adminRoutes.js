@@ -13,6 +13,6 @@ router.use(verifyToken, isAdmin);
 router.get('/stats', getAdminStats);
 router.post('/create-user', createUser);
 router.post('/create-store', createStore);
-router.get('/users/:id', listUsers);
-router.get('/stores/:id', listStores);
+router.get('/users', listUsers);
+router.get('/stores', listStores);
 export default router;
