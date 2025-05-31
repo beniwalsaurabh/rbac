@@ -31,7 +31,7 @@ app.use('/api/ratings', ratingRoutes);
 app.use('/api/stores', storeRoutes);
 app.use('/api/users', userRoutes);
 
-app.use('*',function(req,res){
+app.get('/*',function(req,res){
     res.sendFile(path.join(__dirname, './frontend/build/index.html'));
 });
 
