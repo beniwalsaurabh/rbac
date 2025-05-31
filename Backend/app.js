@@ -19,7 +19,7 @@ const __dirname=path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './frontend/build')));
+
 
 //app.get('/', (req, res) => res.send('Store Rating API'));
 
@@ -31,7 +31,9 @@ app.use('/api/ratings', ratingRoutes);
 app.use('/api/stores', storeRoutes);
 app.use('/api/users', userRoutes);
 
-app.get('/*',function(req,res){
+app.use(express.static(path.join(__dirname, './frontend/build')));
+
+app.get('*',function(req,res){
     res.sendFile(path.join(__dirname, './frontend/build/index.html'));
 });
 
